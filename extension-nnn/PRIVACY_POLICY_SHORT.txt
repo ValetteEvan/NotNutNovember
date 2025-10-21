@@ -1,0 +1,171 @@
+PRIVACY POLICY - No Nut November Challenge Extension
+
+Last updated: October 2024
+
+═══════════════════════════════════════════════════════════════
+
+DATA COLLECTION
+
+This extension does NOT collect any personal data.
+
+All data is stored LOCALLY on your device using Chrome's storage API.
+
+═══════════════════════════════════════════════════════════════
+
+WHAT IS STORED LOCALLY (ON YOUR DEVICE ONLY):
+
+1. Challenge Progress
+   - Days marked as success/failed
+   - Streak count
+   - Unlocked badges
+
+2. User Preferences
+   - Blocking on/off
+   - Notifications on/off
+
+3. Custom Blocked Sites
+   - List of websites YOU chose to block
+   - Remains private and local
+
+4. Timestamps
+   - Challenge start date
+
+═══════════════════════════════════════════════════════════════
+
+WHAT WE DO NOT COLLECT:
+
+❌ NO personal information
+❌ NO browsing history
+❌ NO email addresses
+❌ NO IP addresses
+❌ NO analytics or telemetry
+❌ NO cookies
+❌ NO external data transmission
+
+═══════════════════════════════════════════════════════════════
+
+DATA TRANSMISSION
+
+The extension makes ZERO network requests to external servers.
+
+Everything is processed locally by your browser.
+
+No data leaves your device. Ever.
+
+═══════════════════════════════════════════════════════════════
+
+PERMISSIONS EXPLAINED
+
+1. storage
+   → Save your progress locally
+
+2. declarativeNetRequest + declarativeNetRequestWithHostAccess
+   → Block adult websites locally
+   → Redirect to motivational page
+
+3. notifications
+   → Show optional daily reminders
+
+4. alarms
+   → Schedule notifications
+
+5. <all_urls>
+   → Required to block sites across all domains
+   → Does NOT read page content
+   → Does NOT collect browsing history
+
+═══════════════════════════════════════════════════════════════
+
+YOUR CONTROL
+
+You have full control over your data:
+
+• View: Open DevTools console → chrome.storage.local.get(null, console.log)
+• Export: Settings → Export data (JSON)
+• Delete: Settings → Delete all data OR uninstall extension
+
+═══════════════════════════════════════════════════════════════
+
+SHARING CODE FEATURE
+
+The "accountability" sharing code is generated LOCALLY based on your stats.
+
+Format: NNN-2024-ABC12-15D12S
+- ABC12 = Anonymous hash
+- 15D = 15 days validated
+- 12S = 12-day streak
+
+NO personal data is included or transmitted.
+
+═══════════════════════════════════════════════════════════════
+
+THIRD-PARTY SERVICES
+
+None. Zero. Nada.
+
+• No analytics (Google Analytics, etc.)
+• No tracking
+• No crash reporting
+• No external APIs
+• No CDNs
+
+100% local and autonomous.
+
+═══════════════════════════════════════════════════════════════
+
+GDPR COMPLIANCE
+
+This extension is GDPR compliant because:
+
+✓ No personal data is collected
+✓ No data processing occurs
+✓ User has full control over local data
+✓ Open source code (verifiable)
+✓ No consent needed (no tracking/cookies)
+
+═══════════════════════════════════════════════════════════════
+
+CHILDREN'S PRIVACY
+
+No data is collected from anyone, including children.
+
+Parents can review locally stored data if desired.
+
+═══════════════════════════════════════════════════════════════
+
+CHANGES TO THIS POLICY
+
+Any changes will:
+- Update the "Last updated" date
+- Be documented in release notes
+- Be included in extension updates
+
+We will NEVER start collecting data without:
+- Clear notification
+- Explicit user consent
+- Easy opt-out option
+
+═══════════════════════════════════════════════════════════════
+
+CONTACT
+
+Questions? Privacy concerns?
+
+• GitHub: [Your GitHub URL]
+• Email: [Your Email]
+
+═══════════════════════════════════════════════════════════════
+
+SUMMARY
+
+In one sentence:
+Everything stays on your device, nothing is sent anywhere, ever.
+
+Your privacy is our priority. 🔒
+
+═══════════════════════════════════════════════════════════════
+
+Full privacy policy: See PRIVACY_POLICY.md
+Source code: GitHub (open source, MIT license)
+
+Developed with respect for your privacy 💜

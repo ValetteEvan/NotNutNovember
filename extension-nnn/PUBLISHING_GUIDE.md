@@ -424,33 +424,72 @@ Required to schedule daily reminder notifications at 9 PM.
 ```
 
 **Privacy Policy URL** :
+
+Tu as **3 fichiers de politique de confidentialité** déjà créés :
+
+**Option 1 - GitHub Pages** (Recommandé) :
 ```
-(Si tu as un site web, ajoute une page privacy policy)
-(Sinon, crée un Gist GitHub avec la politique de confidentialité)
+1. Crée un repo GitHub public pour l'extension
+2. Active GitHub Pages dans les settings
+3. Upload privacy-policy.html dans le repo
+4. URL sera : https://yourusername.github.io/nnn-extension/privacy-policy.html
+```
 
-Exemple de contenu :
----
-Privacy Policy for No Nut November Challenge Extension
+**Option 2 - GitHub Gist** :
+```
+1. Va sur https://gist.github.com/
+2. Crée un nouveau Gist public
+3. Copie le contenu de PRIVACY_POLICY_EN.md
+4. Nomme-le "privacy-policy.md"
+5. URL sera : https://gist.github.com/yourusername/[gist-id]
+```
 
-Data Collection:
-This extension does NOT collect any personal data. All data is stored locally on your device using Chrome's storage API.
+**Option 3 - Fichier dans l'extension** :
+```
+L'URL sera : chrome-extension://[extension-id]/privacy-policy.html
+Note : Moins professionnel, préfère Options 1 ou 2
+```
 
-Data Storage:
-- Daily progress (dates marked as success/failed)
-- Custom blocked websites
-- User preferences (notifications on/off, blocking on/off)
-- Unlocked badges
+**Contenu pour le Chrome Web Store** (utilise PRIVACY_POLICY_SHORT.txt) :
+```
+PRIVACY POLICY
 
-This data is stored locally and never transmitted to external servers.
+This extension does NOT collect any personal data.
 
-Third-party Services:
-This extension does not use any third-party analytics or tracking services.
+DATA STORED LOCALLY (on your device only):
+- Challenge progress (days validated, streak, badges)
+- User preferences (blocking on/off, notifications)
+- Custom blocked sites list
 
-Contact:
-For questions, contact: [ton email]
+WHAT WE DO NOT COLLECT:
+- No browsing history
+- No personal information
+- No analytics or telemetry
+- No external data transmission
 
+DATA TRANSMISSION:
+Zero network requests to external servers.
+Everything is processed locally by Chrome.
+
+PERMISSIONS:
+- storage: Save progress locally
+- declarativeNetRequest: Block sites locally
+- notifications: Optional daily reminders
+- alarms: Schedule notifications
+- <all_urls>: Required for blocking (does NOT read content)
+
+YOUR CONTROL:
+- View: DevTools → chrome.storage.local.get()
+- Export: Settings → Export JSON
+- Delete: Settings → Delete all data
+
+GDPR COMPLIANT:
+No data collection = No consent needed
+
+Full policy: [Insert GitHub Pages URL here]
+
+Contact: [your email]
 Last updated: October 2024
----
 ```
 
 **Host Permissions** :

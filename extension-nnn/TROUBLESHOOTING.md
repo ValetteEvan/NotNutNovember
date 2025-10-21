@@ -52,6 +52,55 @@ chrome.storage.local.clear(() => console.log('Données effacées'));
 
 ---
 
+### ❌ Erreur : "Rule with id X does not have a unique ID"
+
+**Symptôme** : Dans la console du Service Worker :
+```
+Détails: Rule with id 1 does not have a unique ID.
+```
+
+**Cause** : Des règles avec des IDs en doublon existent (généralement après plusieurs rechargements).
+
+**Solution rapide** :
+
+**Méthode 1 - Automatique** (recommandé) :
+```javascript
+// Dans la console du Service Worker :
+chrome.declarativeNetRequest.getDynamicRules().then(rules => {
+  const ids = rules.map(r => r.id);
+  chrome.declarativeNetRequest.updateDynamicRules({
+    removeRuleIds: ids
+  }).then(() => {
+    console.log('✅ Toutes les règles supprimées');
+    console.log('💡 Recharge l\'extension maintenant');
+  });
+});
+```
+
+**Méthode 2 - Manuelle** :
+1. Va sur `chrome://extensions/`
+2. Clique sur le bouton **⟳ Recharger** de l'extension
+3. Attends 2 secondes
+4. Vérifie la console : tu devrais voir "✅ X règles de blocage ajoutées avec succès"
+
+**Méthode 3 - Reset complet** (si les autres ne marchent pas) :
+```javascript
+// Console du Service Worker - Nettoie TOUT
+chrome.declarativeNetRequest.getDynamicRules().then(r =>
+  chrome.declarativeNetRequest.updateDynamicRules({
+    removeRuleIds: r.map(x => x.id)
+  })
+).then(() => location.reload());
+```
+
+**Prévention** :
+- Ne recharge pas l'extension trop rapidement plusieurs fois de suite
+- Attends que les logs "✅ règles ajoutées" apparaissent avant de recharger
+
+**Plus de détails** : Voir [MAINTENANCE_SCRIPTS.md](MAINTENANCE_SCRIPTS.md) pour d'autres scripts de nettoyage.
+
+---
+
 ### ❌ Erreur : "Could not load icon"
 
 **Symptôme** :

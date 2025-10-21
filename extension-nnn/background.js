@@ -33,24 +33,29 @@ async function initializeBlockingRules() {
 // Mettre à jour les règles de blocage
 async function updateBlockingRules(domains) {
     try {
-        // Supprimer toutes les règles existantes
+        // D'abord, supprimer TOUTES les règles existantes pour éviter les conflits d'ID
         const existingRules = await chrome.declarativeNetRequest.getDynamicRules();
         const ruleIdsToRemove = existingRules.map(rule => rule.id);
 
+        // Toujours supprimer d'abord, même s'il n'y a pas de nouvelles règles
         if (ruleIdsToRemove.length > 0) {
             await chrome.declarativeNetRequest.updateDynamicRules({
                 removeRuleIds: ruleIdsToRemove
             });
+            console.log(`${ruleIdsToRemove.length} règles supprimées`);
         }
 
         // Créer de nouvelles règles si des domaines sont fournis
         if (domains.length > 0) {
-            const rules = domains.map((domain, index) => {
+            // Filtrer les domaines vides et dédupliquer
+            const uniqueDomains = [...new Set(domains.filter(d => d && d.trim()))];
+
+            const rules = uniqueDomains.map((domain, index) => {
                 // Nettoyer le domaine (enlever protocole, www, etc.)
-                const cleanDomain = domain.replace(/^(https?:\/\/)?(www\.)?/, '').split('/')[0];
+                const cleanDomain = domain.replace(/^(https?:\/\/)?(www\.)?/, '').split('/')[0].trim();
 
                 return {
-                    id: index + 1,
+                    id: index + 1, // ID unique basé sur l'index
                     priority: 1,
                     action: {
                         type: 'redirect',
@@ -68,22 +73,29 @@ async function updateBlockingRules(domains) {
             // Chrome limite à 5000 règles dynamiques, mais on va rester raisonnable
             const rulesToAdd = rules.slice(0, 1000);
 
+            // Ajouter les nouvelles règles APRÈS avoir supprimé les anciennes
             await chrome.declarativeNetRequest.updateDynamicRules({
                 addRules: rulesToAdd
             });
 
-            console.log(`${rulesToAdd.length} règles de blocage ajoutées`);
+            console.log(`✅ ${rulesToAdd.length} règles de blocage ajoutées avec succès`);
         } else {
-            console.log('Aucune règle de blocage active');
+            console.log('ℹ️ Aucune règle de blocage active (blocage désactivé ou liste vide)');
         }
     } catch (error) {
-        console.error('Erreur de mise à jour des règles:', error);
+        console.error('❌ Erreur de mise à jour des règles:', error);
         console.error('Détails:', error.message);
 
         // Log plus détaillé pour le debug
         if (domains && domains.length > 0) {
-            console.log('Tentative de blocage pour:', domains.length, 'domaines');
-            console.log('Premiers domaines:', domains.slice(0, 3));
+            console.log('🔍 Debug - Tentative de blocage pour:', domains.length, 'domaines');
+            console.log('🔍 Debug - Premiers domaines:', domains.slice(0, 3));
+        }
+
+        // Si l'erreur contient "unique ID", suggérer une solution
+        if (error.message && error.message.includes('unique ID')) {
+            console.warn('⚠️ Conflit d\'ID détecté. Essaye de recharger l\'extension.');
+            console.log('💡 Solution: chrome://extensions/ → bouton ⟳ Recharger');
         }
     }
 }
