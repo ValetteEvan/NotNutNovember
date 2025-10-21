@@ -16,7 +16,7 @@
 ║ 📦 PROJET COMPLET                                                          ║
 ╚════════════════════════════════════════════════════════════════════════════╝
 
-  📍 Localisation : /Users/evanvalette/NotNutNovember/extension-nnn/
+  📍 Localisation : Undefine
   📊 Fichiers créés : 25 fichiers
   💻 Lignes de code : 2600+ lignes
   📝 Documentation : 5 fichiers complets
