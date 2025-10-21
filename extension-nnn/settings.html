@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramètres - No Nut November</title>
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+    <div class="container">
+        <!-- En-tête -->
+        <header class="header">
+            <h1>⚙️ Paramètres</h1>
+            <p class="subtitle">No Nut November Challenge</p>
+        </header>
+
+        <div class="content">
+            <!-- Section Général -->
+            <section class="section">
+                <h2>🎯 Général</h2>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="setting-title">Activer le blocage de sites</div>
+                        <div class="setting-description">Bloquer automatiquement l'accès aux sites pour adultes</div>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="blockingEnabled" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="setting-title">Notifications quotidiennes</div>
+                        <div class="setting-description">Recevoir un rappel quotidien à 21h pour valider ta journée</div>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="notificationsEnabled" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="setting-title">Mode sombre</div>
+                        <div class="setting-description">Interface en mode sombre (prochainement)</div>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="darkMode" disabled>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Section Sites bloqués -->
+            <section class="section">
+                <h2>🚫 Sites bloqués personnalisés</h2>
+
+                <div class="blocked-sites-info">
+                    <p>L'extension bloque par défaut 37 sites pour adultes. Tu peux ajouter tes propres domaines à bloquer.</p>
+                </div>
+
+                <div class="add-site-form">
+                    <input type="text" id="newSiteInput" placeholder="exemple: example.com" class="input-text">
+                    <button id="addSiteBtn" class="btn-primary">Ajouter</button>
+                </div>
+
+                <div class="custom-sites-list" id="customSitesList">
+                    <!-- Liste générée dynamiquement -->
+                </div>
+            </section>
+
+            <!-- Section Statistiques -->
+            <section class="section">
+                <h2>📊 Statistiques & Données</h2>
+
+                <div class="stats-overview">
+                    <div class="stat-box">
+                        <div class="stat-value" id="totalDaysValidated">0</div>
+                        <div class="stat-label">Jours validés</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="longestStreak">0</div>
+                        <div class="stat-label">Plus long streak</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="totalBadges">0/4</div>
+                        <div class="stat-label">Badges débloqués</div>
+                    </div>
+                </div>
+
+                <div class="data-actions">
+                    <button id="exportDataBtn" class="btn-secondary">
+                        <span>📥</span> Exporter les données (JSON)
+                    </button>
+                    <button id="exportImageBtn" class="btn-secondary" disabled>
+                        <span>📸</span> Exporter en image (bientôt)
+                    </button>
+                </div>
+            </section>
+
+            <!-- Section Code de partage -->
+            <section class="section">
+                <h2>🤝 Accountability</h2>
+
+                <div class="accountability-info">
+                    <p>Génère un code de partage anonyme pour prouver ta progression sans révéler ton identité.</p>
+                </div>
+
+                <button id="generateCodeBtn" class="btn-secondary full-width">
+                    <span>🔐</span> Générer un code de partage
+                </button>
+
+                <div id="shareCodeDisplay" class="share-code-display hidden">
+                    <div class="share-code-label">Ton code de partage :</div>
+                    <div class="share-code" id="shareCode">NNN-2024-XXXXX</div>
+                    <button id="copyCodeBtn" class="btn-copy">📋 Copier</button>
+                </div>
+            </section>
+
+            <!-- Section Danger Zone -->
+            <section class="section danger-zone">
+                <h2>⚠️ Zone de danger</h2>
+
+                <div class="danger-info">
+                    <p><strong>Attention :</strong> Ces actions sont irréversibles !</p>
+                </div>
+
+                <div class="danger-actions">
+                    <button id="resetChallengeBtn" class="btn-danger">
+                        <span>🔄</span> Réinitialiser le challenge
+                    </button>
+                    <button id="clearAllDataBtn" class="btn-danger">
+                        <span>🗑️</span> Supprimer toutes les données
+                    </button>
+                </div>
+            </section>
+
+            <!-- Section À propos -->
+            <section class="section">
+                <h2>ℹ️ À propos</h2>
+
+                <div class="about-content">
+                    <p><strong>No Nut November Challenge Extension</strong></p>
+                    <p>Version 1.0.0</p>
+                    <p>Une extension pour t'aider à suivre et réussir le challenge No Nut November avec discipline et motivation.</p>
+
+                    <div class="about-links">
+                        <a href="https://github.com/yourusername/nnn-extension" target="_blank" class="link">
+                            GitHub Repository
+                        </a>
+                        <a href="https://github.com/yourusername/nnn-extension/issues" target="_blank" class="link">
+                            Signaler un bug
+                        </a>
+                    </div>
+
+                    <div class="privacy-note">
+                        <p>🔒 <strong>Confidentialité :</strong> Toutes tes données restent stockées localement sur ton appareil. Aucune information n'est envoyée à des serveurs externes.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <button id="backToPopupBtn" class="btn-back">
+                ← Retour au popup
+            </button>
+        </footer>
+    </div>
+
+    <script src="settings.js"></script>
+</body>
+</html>

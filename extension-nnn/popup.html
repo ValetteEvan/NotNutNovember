@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Nut November Challenge</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <!-- En-tête -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🥜 NO NUT NOVEMBER</h1>
+                <p class="subtitle">Challenge 2024</p>
+            </div>
+        </header>
+
+        <!-- Statistiques principales -->
+        <section class="stats-main">
+            <div class="stat-card">
+                <div class="stat-number" id="currentStreak">0</div>
+                <div class="stat-label">Jours consécutifs</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalSuccess">0/30</div>
+                <div class="stat-label">Total réussi</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="successRate">0%</div>
+                <div class="stat-label">Taux de réussite</div>
+            </div>
+        </section>
+
+        <!-- Message de motivation -->
+        <section class="motivation-box">
+            <p id="motivationMessage">Commence ton challenge aujourd'hui !</p>
+        </section>
+
+        <!-- Calendrier -->
+        <section class="calendar-section">
+            <h2>Calendrier de novembre</h2>
+            <div class="calendar-grid" id="calendarGrid">
+                <!-- Généré dynamiquement par JS -->
+            </div>
+        </section>
+
+        <!-- Bouton de validation -->
+        <section class="action-section">
+            <button id="validateDayBtn" class="btn-validate">
+                <span class="btn-icon">✓</span>
+                <span class="btn-text">Valider aujourd'hui</span>
+            </button>
+            <p class="today-status" id="todayStatus"></p>
+        </section>
+
+        <!-- Badges -->
+        <section class="badges-section">
+            <h3>Badges débloqués</h3>
+            <div class="badges-grid">
+                <div class="badge" data-badge="3days">
+                    <div class="badge-icon locked" id="badge3">🥉</div>
+                    <div class="badge-name">3 jours</div>
+                </div>
+                <div class="badge" data-badge="7days">
+                    <div class="badge-icon locked" id="badge7">🥈</div>
+                    <div class="badge-name">7 jours</div>
+                </div>
+                <div class="badge" data-badge="15days">
+                    <div class="badge-icon locked" id="badge15">🥇</div>
+                    <div class="badge-name">15 jours</div>
+                </div>
+                <div class="badge" data-badge="30days">
+                    <div class="badge-icon locked" id="badge30">🏆</div>
+                    <div class="badge-name">30 jours</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation vers paramètres -->
+        <footer class="footer">
+            <button id="settingsBtn" class="btn-secondary">
+                <span>⚙️</span> Paramètres
+            </button>
+            <button id="resetBtn" class="btn-secondary btn-danger">
+                <span>🔄</span> Réinitialiser
+            </button>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

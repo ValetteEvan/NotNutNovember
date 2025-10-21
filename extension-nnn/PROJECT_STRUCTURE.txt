@@ -1,0 +1,169 @@
+STRUCTURE DU PROJET - NO NUT NOVEMBER EXTENSION
+================================================
+
+extension-nnn/
+│
+├── 📄 FICHIERS DE CONFIGURATION
+│   ├── manifest.json                 # Configuration principale de l'extension (Manifest V3)
+│   ├── rules.json                    # Règles de blocage dynamiques (vide par défaut)
+│   └── .gitignore                    # Fichiers à ignorer par Git
+│
+├── 📖 DOCUMENTATION
+│   ├── README.md                     # Documentation complète du projet
+│   ├── INSTALLATION.md               # Guide d'installation détaillé
+│   ├── QUICK_START.md                # Démarrage rapide en 5 minutes
+│   ├── FEATURES.md                   # Description détaillée des fonctionnalités
+│   ├── LICENSE                       # Licence MIT
+│   └── PROJECT_STRUCTURE.txt         # Ce fichier
+│
+├── 🎨 INTERFACE POPUP (400x600px)
+│   ├── popup.html                    # Structure HTML du popup principal
+│   ├── popup.css                     # Styles du popup (calendrier, badges, stats)
+│   └── popup.js                      # Logique du popup (validation, calendrier, badges)
+│
+├── 🚫 PAGE DE BLOCAGE
+│   ├── blocked.html                  # Page affichée quand un site est bloqué
+│   ├── blocked.css                   # Styles de la page de blocage
+│   └── blocked.js                    # Logique de la page (stats, citations, redirections)
+│
+├── ⚙️ PAGE DE PARAMÈTRES
+│   ├── settings.html                 # Interface des paramètres et configuration
+│   ├── settings.css                  # Styles de la page de paramètres
+│   └── settings.js                   # Gestion des paramètres, sites personnalisés, export
+│
+├── 🔧 SERVICE WORKER
+│   └── background.js                 # Service worker pour blocage, notifications, alarmes
+│
+├── 🎯 ASSETS
+│   ├── icon16.png                    # Icône 16x16 (À CRÉER)
+│   ├── icon48.png                    # Icône 48x48 (À CRÉER)
+│   ├── icon128.png                   # Icône 128x128 (À CRÉER)
+│   └── README.txt                    # Instructions pour créer les icônes
+│
+├── 📊 DONNÉES
+│   └── blocked-sites.json            # Liste de 37 sites + messages de motivation
+│
+└── 🛠️ OUTILS
+    ├── generate-icons.html           # Générateur d'icônes HTML/Canvas
+    └── create-icons.js               # Script Node.js pour générer des icônes SVG
+
+
+FONCTIONNALITÉS IMPLÉMENTÉES
+=============================
+
+✅ Calendrier interactif de 30 jours
+✅ Système de validation quotidienne
+✅ Compteur de streak (jours consécutifs)
+✅ Statistiques en temps réel
+✅ Système de 4 badges (3, 7, 15, 30 jours)
+✅ Blocage de 37+ sites pour adultes
+✅ Sites personnalisés à bloquer
+✅ Page de redirection motivante
+✅ Messages de motivation (20+ variantes)
+✅ Citations inspirantes (15+ variantes)
+✅ Notifications quotidiennes (21h)
+✅ Notifications de badges débloqués
+✅ Raccourci clavier (Ctrl/Cmd+Shift+V)
+✅ Export des données (JSON)
+✅ Code de partage anonyme
+✅ Paramètres complets
+✅ Privacy-first (tout en local)
+✅ Design moderne et responsive
+✅ Manifest V3 compatible
+
+
+TECHNOLOGIES UTILISÉES
+======================
+
+- HTML5 / CSS3 / JavaScript Vanilla
+- Chrome Extension APIs:
+  * chrome.storage (stockage local)
+  * chrome.declarativeNetRequest (blocage)
+  * chrome.notifications (notifications)
+  * chrome.alarms (rappels quotidiens)
+  * chrome.commands (raccourcis clavier)
+  * chrome.runtime (messages, options)
+
+
+DONNÉES STOCKÉES (chrome.storage.local)
+========================================
+
+{
+  "challengeData": {
+    "startDate": "2024-11-01T00:00:00.000Z",
+    "days": {
+      "2024-11-01": "success",
+      "2024-11-02": "success",
+      "2024-11-03": "failed"
+    },
+    "unlockedBadges": ["badge3", "badge7"],
+    "customBlockedSites": ["example.com"],
+    "settings": {
+      "blockingEnabled": true,
+      "notificationsEnabled": true,
+      "darkMode": false
+    }
+  }
+}
+
+
+PERMISSIONS REQUISES
+====================
+
+- storage              → Sauvegarder les données localement
+- declarativeNetRequest → Bloquer les sites
+- notifications        → Afficher les notifications
+- alarms              → Rappels quotidiens
+- <all_urls>          → Nécessaire pour le blocage
+
+
+TAILLE APPROXIMATIVE
+====================
+
+Total (sans icônes): ~50 KB
+- HTML: ~15 KB
+- CSS: ~15 KB
+- JavaScript: ~15 KB
+- JSON: ~5 KB
+- Documentation: ~50 KB
+
+
+INSTALLATION
+============
+
+1. Crée les 3 icônes PNG (icon16.png, icon48.png, icon128.png)
+2. Va à chrome://extensions/
+3. Active "Mode développeur"
+4. Clique "Charger l'extension non empaquetée"
+5. Sélectionne le dossier extension-nnn
+6. Profite de l'extension !
+
+
+PROCHAINES FONCTIONNALITÉS
+===========================
+
+⏳ Mode sombre complet
+⏳ Export des stats en image
+⏳ Sons de célébration
+⏳ Graphiques de progression
+⏳ Support multi-langues
+⏳ Thèmes personnalisables
+⏳ Synchronisation cross-device (optionnel)
+
+
+SUPPORT
+=======
+
+📧 Issues: https://github.com/yourusername/nnn-extension/issues
+📖 Wiki: Voir README.md
+🌟 Stars appréciées sur GitHub !
+
+
+LICENCE
+=======
+
+MIT License - Voir LICENSE pour plus de détails
+
+
+DÉVELOPPÉ AVEC ❤️ POUR LA COMMUNAUTÉ NNN
+========================================

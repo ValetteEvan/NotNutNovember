@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Bloqué - No Nut November</title>
+    <link rel="stylesheet" href="blocked.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <!-- Icône d'avertissement -->
+            <div class="warning-icon">🛑</div>
+
+            <!-- Message principal -->
+            <h1>Site Bloqué</h1>
+            <p class="subtitle">Ce site est bloqué pendant le No Nut November Challenge</p>
+
+            <!-- Statistiques de progression -->
+            <div class="stats-card">
+                <div class="stat-item">
+                    <div class="stat-number" id="successDays">0</div>
+                    <div class="stat-label">Jours réussis</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number" id="currentStreak">0</div>
+                    <div class="stat-label">Jours consécutifs</div>
+                </div>
+            </div>
+
+            <!-- Message de motivation -->
+            <div class="motivation-card">
+                <div class="quote-icon">"</div>
+                <p class="quote-text" id="quoteText">La discipline est le pont entre les objectifs et l'accomplissement.</p>
+                <p class="quote-author">- Jim Rohn</p>
+            </div>
+
+            <!-- Message d'encouragement -->
+            <div class="encouragement">
+                <p id="encouragementText">Reste fort ! Tu as déjà prouvé ta discipline.</p>
+            </div>
+
+            <!-- Actions -->
+            <div class="actions">
+                <button id="goBackBtn" class="btn-primary">
+                    <span>←</span> Retourner en sécurité
+                </button>
+                <button id="openPopupBtn" class="btn-secondary">
+                    📊 Voir ma progression
+                </button>
+            </div>
+
+            <!-- Alternatives productives -->
+            <div class="alternatives">
+                <h3>Activités alternatives recommandées :</h3>
+                <ul>
+                    <li>🏃 Faire de l'exercice ou une promenade</li>
+                    <li>📚 Lire un livre ou apprendre quelque chose de nouveau</li>
+                    <li>🎨 Travailler sur un projet créatif</li>
+                    <li>🧘 Méditer ou pratiquer la pleine conscience</li>
+                    <li>👥 Passer du temps avec des amis ou la famille</li>
+                    <li>💼 Travailler sur tes objectifs personnels</li>
+                </ul>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>Pense à long terme. Chaque moment de discipline compte.</p>
+                <button id="disableBlockingBtn" class="btn-link">Désactiver le blocage (déconseillé)</button>
+            </footer>
+        </div>
+    </div>
+
+    <script src="blocked.js"></script>
+</body>
+</html>
